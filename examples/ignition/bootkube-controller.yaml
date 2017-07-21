@@ -123,7 +123,7 @@ storage:
       contents:
         inline: |
           KUBELET_IMAGE_URL=quay.io/coreos/hyperkube
-          KUBELET_IMAGE_TAG=v1.6.7_coreos.0
+          KUBELET_IMAGE_TAG=v1.7.1_coreos.0
     - path: /etc/ssl/etcd/.empty
       filesystem: root
       mode: 0644
@@ -153,8 +153,8 @@ storage:
           #!/bin/bash
           # Wrapper for bootkube start
           set -e
-          BOOTKUBE_ACI="${BOOTKUBE_ACI:-quay.io/coreos/bootkube}"
-          BOOTKUBE_VERSION="${BOOTKUBE_VERSION:-v0.5.1}"
+          BOOTKUBE_ACI="${BOOTKUBE_ACI:-quay.io/coreos/bootkube-dev}"
+          BOOTKUBE_VERSION="${BOOTKUBE_VERSION:-aad6e365ef2ed7572f077b271b66673b3c719267}"
           BOOTKUBE_ASSETS="${BOOTKUBE_ASSETS:-/opt/bootkube/assets}"
           exec /usr/bin/rkt run \
             --trust-keys-from-https \
